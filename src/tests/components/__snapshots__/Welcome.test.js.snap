@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render welcome component 1`] = `
+<div>
+  <WelcomeMessage />
+</div>
+`;
