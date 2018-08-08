@@ -5,7 +5,7 @@ import PostForm from './PostForm';
 import {startEditPost} from '../actions/posts';
 import {startDeletePost} from '../actions/posts';
 
-class EditPostPage extends React.Component {
+export class EditPostPage extends React.Component {
   constructor(props) {
     super(props);
 
@@ -16,7 +16,7 @@ class EditPostPage extends React.Component {
   renderError = () => {
     if(this.state.error) {
       return (
-        <div>
+        <div className="error-msg">
           <p>{this.state.error}</p>
         </div>
       )
@@ -43,7 +43,7 @@ class EditPostPage extends React.Component {
       <div>
         {this.renderError()}
         <PostForm post={this.props.post} onSubmit={this.onSubmit} />
-        <button onClick={this.deletePost}>Delete Post</button>
+        <button className="btn-delete" onClick={this.deletePost}>Delete Post</button>
       </div>
     )
   }

@@ -18,7 +18,7 @@ export class CommentForm extends React.Component {
   renderError = () => {
     if (this.state.error) {
       return (
-        <div>{this.state.error}</div>
+        <div className="error-msg">{this.state.error}</div>
       )
     }
   }

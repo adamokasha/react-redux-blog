@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import PostForm from './PostForm';
 import {startAddPost} from '../actions/posts';
 
-class AddPostForm extends React.Component {
+export class AddPostPage extends React.Component {
   constructor(props) {
     super(props);
 
@@ -15,7 +15,7 @@ class AddPostForm extends React.Component {
   renderError = () => {
     if(this.state.error) {
       return (
-        <div>
+        <div className="error-msg">
           <p>{this.state.error}</p>
         </div>
       )
@@ -43,5 +43,5 @@ const mapDispatchToProps = (dispatch) => ({
   startAddPost: (post) => dispatch(startAddPost(post))
 });
 
-export default connect(null, mapDispatchToProps)(AddPostForm);
+export default connect(null, mapDispatchToProps)(AddPostPage);
 

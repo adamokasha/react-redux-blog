@@ -4,7 +4,7 @@ import validator from 'validator';
 
 import {startLogin} from '../actions/auth';
 
-class LoginPage extends React.Component {
+export class LoginPage extends React.Component {
   constructor (props) {
     super(props);
 
@@ -40,7 +40,7 @@ class LoginPage extends React.Component {
   renderError = () => {
     if(this.state.error) {
       return (
-        <p>{this.state.error}</p>
+        <p className="error-msg">{this.state.error}</p>
       )
     }
   }

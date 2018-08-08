@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render LoginPage correctly 1`] = `
+<div>
+  <form
+    onSubmit={[Function]}
+  >
+    <input
+      autoFocus={true}
+      name="email"
+      onChange={[Function]}
+      type="text"
+    />
+    <input
+      name="password"
+      onChange={[Function]}
+      type="password"
+    />
+    <button
+      disabled={true}
+    >
+      Login
+    </button>
+  </form>
+</div>
+`;

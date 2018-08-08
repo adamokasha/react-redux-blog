@@ -1,6 +1,6 @@
 import React from 'react';
 
-class PostForm extends React.Component {
+export class PostForm extends React.Component {
   constructor(props) {
     super(props);
 
@@ -53,7 +53,7 @@ class PostForm extends React.Component {
   render() {
     return (
       <div>
-        <ul>{this.renderErrors()}</ul>
+        <ul className="error-list">{this.renderErrors()}</ul>
         <form onSubmit={this.onSubmit}>
           <label>Title</label>
           <input 

@@ -6,7 +6,7 @@ import moment from 'moment';
 import Header from './Header';
 import CommentBox from './CommentBox';
 
-const PostItem = ({auth, post}) => {
+export const PostItem = ({auth, post}) => {
   function renderEditButton() {
     if (auth.role === 'admin') {
       return (

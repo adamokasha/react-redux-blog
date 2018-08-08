@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render a single post 1`] = `
+<div>
+  <Connect(Header) />
+  <div>
+    <div>
+      <h3>
+        The first post
+      </h3>
+      <p>
+        Posted by 
+        UserOne
+         on 
+        August 2nd 2018
+        .
+      </p>
+      <p>
+        This is the first post. The body has at least 24 characters.
+      </p>
+    </div>
+    <Connect(CommentBox)
+      comments={
+        Array [
+          Object {
+            "_id": "5b62cde562105f402c9a8748",
+            "comment": "1st Comment",
+            "createdBy": "theadmin",
+            "date": 1533201893553,
+          },
+          Object {
+            "_id": "5b62cdeb62105f402c9a8749",
+            "comment": "2nd Comment",
+            "createdBy": "theadmin",
+            "date": 1533201899157,
+          },
+        ]
+      }
+      id="5b62cb86efcae617d8a0bef9"
+    />
+  </div>
+</div>
+`;

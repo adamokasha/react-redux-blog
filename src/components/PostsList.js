@@ -22,7 +22,7 @@ import {sortPostsByDate}  from '../selectors/posts';
 //   </div>
 // )
 
-class PostsList extends React.Component {
+export class PostsList extends React.Component {
   constructor(props) {
     super(props);
 

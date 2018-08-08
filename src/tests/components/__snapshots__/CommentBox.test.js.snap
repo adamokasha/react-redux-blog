@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render CommentBox correctly 1`] = `
+<div>
+  <ul>
+    <p>
+      Be the first to comment...
+    </p>
+  </ul>
+</div>
+`;
+
+exports[`should render CommentForm if user logged in 1`] = `
+<div>
+  <Connect(CommentForm)
+    id="5b62cb86efcae617d8a0bef9"
+  />
+  <ul>
+    <p>
+      Be the first to comment...
+    </p>
+  </ul>
+</div>
+`;

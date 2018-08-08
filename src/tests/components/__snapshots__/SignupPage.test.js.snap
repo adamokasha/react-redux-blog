@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render SignupPage correctly 1`] = `
+<div>
+  <ul
+    className="error-list"
+  />
+  <form
+    onSubmit={[Function]}
+  >
+    <input
+      autoFocus={true}
+      name="displayname"
+      onChange={[Function]}
+      placeholder="Enter a 6-12 character display name"
+      type="text"
+    />
+    <input
+      name="email"
+      onChange={[Function]}
+      placeholder="Enter a valid email"
+      type="text"
+    />
+    <input
+      name="password"
+      onChange={[Function]}
+      placeholder="Enter a 6-12 character password"
+      type="password"
+    />
+    <button>
+      Signup
+    </button>
+  </form>
+</div>
+`;

@@ -55,9 +55,10 @@ export const startLogin = (email, password) => {
   }
 }
 
-export const startLogout = (token) => {
+export const startLogout = () => {
   return async (dispatch) => {
     try {
+      const {token} = JSON.parse(localStorage.getItem('auth'));
       localStorage.removeItem('auth');
       await axios.delete(`${process.env.API_URI}/users/me/token`, {
         headers: {

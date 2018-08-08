@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render ExpenseDashBoardPage correctly 1`] = `
+<div>
+  <Connect(Header) />
+  <div>
+    <h1>
+      Welcome to the blog dashboard page
+    </h1>
+    <Connect(PostsList) />
+  </div>
+</div>
+`;

@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render header component 1`] = `
+<div>
+  <Link
+    replace={false}
+    to="/"
+  >
+    React Blog
+  </Link>
+  <div>
+    <Link
+      replace={false}
+      to="/signup"
+    >
+      Sign Up
+    </Link>
+    <Link
+      replace={false}
+      to="/signin"
+    >
+      Sign In
+    </Link>
+  </div>
+</div>
+`;

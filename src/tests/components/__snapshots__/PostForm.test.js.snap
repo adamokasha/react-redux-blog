@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render PostForm correctly 1`] = `
+<div>
+  <ul
+    className="error-list"
+  />
+  <form
+    onSubmit={[Function]}
+  >
+    <label>
+      Title
+    </label>
+    <input
+      maxLength={60}
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+    <label>
+      Category
+    </label>
+    <input
+      maxLength={16}
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+    <label>
+      Body
+    </label>
+    <textarea
+      maxLength={12000}
+      onChange={[Function]}
+      value=""
+    />
+    <button>
+      Save Post
+    </button>
+  </form>
+</div>
+`;
+
+exports[`should render PostForm with post data 1`] = `
+<div>
+  <ul
+    className="error-list"
+  />
+  <form
+    onSubmit={[Function]}
+  >
+    <label>
+      Title
+    </label>
+    <input
+      maxLength={60}
+      onChange={[Function]}
+      type="text"
+      value="The first post"
+    />
+    <label>
+      Category
+    </label>
+    <input
+      maxLength={16}
+      onChange={[Function]}
+      type="text"
+      value="General"
+    />
+    <label>
+      Body
+    </label>
+    <textarea
+      maxLength={12000}
+      onChange={[Function]}
+      value="This is the first post. The body has at least 24 characters."
+    />
+    <button>
+      Save Post
+    </button>
+  </form>
+</div>
+`;

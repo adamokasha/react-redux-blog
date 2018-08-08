@@ -4,7 +4,7 @@ import validator from 'validator';
 
 import {startSignup} from '../actions/auth';
 
-class SignupPage extends React.Component {
+export class SignupPage extends React.Component {
   constructor(props) {
     super(props);
 
@@ -66,7 +66,7 @@ class SignupPage extends React.Component {
   render() {
     return (
         <div>
-          <ul>
+          <ul className="error-list">
             {this.renderErrors()}
           </ul>
           <form onSubmit={this.onSubmit}>

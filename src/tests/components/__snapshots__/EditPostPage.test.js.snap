@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render EditPostPage correctly 1`] = `
+<div>
+  <PostForm
+    onSubmit={[Function]}
+    post={
+      Object {
+        "_id": "5b62cb86efcae617d8a0bef8",
+        "author": "UserTwo",
+        "body": "This is the second post.The body has at least 24 characters.",
+        "category": "General",
+        "comments": Array [],
+        "createdAt": 1533201286279,
+        "title": "The second post",
+      }
+    }
+  />
+  <button
+    className="btn-delete"
+    onClick={[Function]}
+  >
+    Delete Post
+  </button>
+</div>
+`;

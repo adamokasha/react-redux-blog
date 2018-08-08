@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render posts list with posts 1`] = `
+<div>
+  <Link
+    key="5b62cb86efcae617d8a0bef9"
+    replace={false}
+    to="posts/5b62cb86efcae617d8a0bef9"
+  >
+    <h3>
+      The first post
+    </h3>
+    <p>
+      This is the first post. The body has at least 24 characters.
+    </p>
+  </Link>
+  <Link
+    key="5b62cb86efcae617d8a0bef8"
+    replace={false}
+    to="posts/5b62cb86efcae617d8a0bef8"
+  >
+    <h3>
+      The second post
+    </h3>
+    <p>
+      This is the second post.The body has at least 24 characters.
+    </p>
+  </Link>
+</div>
+`;

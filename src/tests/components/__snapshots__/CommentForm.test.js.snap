@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render CommentForm correctly 1`] = `
+<div>
+  <form
+    onSubmit={[Function]}
+  >
+    <textarea
+      maxLength={128}
+      onChange={[Function]}
+      placeholder="Leave a comment..."
+    />
+    <button>
+      Add Comment
+    </button>
+  </form>
+</div>
+`;

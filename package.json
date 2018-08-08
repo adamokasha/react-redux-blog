@@ -20,6 +20,7 @@
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.3.4",
     "jest": "^23.2.0",
+    "moxios": "^0.4.0",
     "react-test-renderer": "^16.4.1",
     "webpack-dev-server": "^3.1.4"
   },

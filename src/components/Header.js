@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 
 import {startLogout} from '../actions/auth';
 
-class Header extends React.Component {
+export class Header extends React.Component {
   renderLinks = () => {
     if (this.props.auth.role === 'admin') {
       return <Link to="/addpost">Add Post</Link>
@@ -19,12 +19,8 @@ class Header extends React.Component {
   }
   renderSignOutButton = () => {
     if (this.props.auth.id) {
-      return <button onClick={this.handleLogout}>Sign Out</button>
+      return <button name="signout" onClick={this.props.startLogout}>Sign Out</button>
     }
-  }
-  handleLogout = () => {
-    const {token} = JSON.parse(localStorage.getItem('auth'));
-    this.props.startLogout(token);
   }
   render(){
     return (
