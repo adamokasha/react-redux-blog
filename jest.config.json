@@ -1,7 +1,8 @@
 {
   "setupFiles": [
     "raf/polyfill", 
-    "<rootDir>/src/tests/jestSetup.js"
+    "<rootDir>/src/tests/jestSetup.js",
+    "jest-localstorage-mock"
   ],
   "snapshotSerializers": [
     "enzyme-to-json/serializer"
