@@ -23,16 +23,16 @@ exports[`should render a single post 1`] = `
       comments={
         Array [
           Object {
-            "_id": "5b62cde562105f402c9a8748",
-            "comment": "1st Comment",
+            "_id": "5b62cdeb62105f402c9a8749",
+            "comment": "A Comment",
+            "createdAt": 1533201893560,
             "createdBy": "theadmin",
-            "date": 1533201893553,
           },
           Object {
-            "_id": "5b62cdeb62105f402c9a8749",
-            "comment": "2nd Comment",
+            "_id": "5b62cde562105f402c9a8748",
+            "comment": "Another Comment",
+            "createdAt": 1533201899157,
             "createdBy": "theadmin",
-            "date": 1533201899157,
           },
         ]
       }

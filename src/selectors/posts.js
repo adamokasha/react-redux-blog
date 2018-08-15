@@ -1,5 +1,6 @@
 export const sortPostsByDate = (postsArray) => {
-  return postsArray.sort((a,b) => {
+  const newPostsArray = [].concat(postsArray);
+  return newPostsArray.sort((a,b) => {
     if(a.createdAt > b.createdAt) {
       return -1;
     }
@@ -10,11 +11,12 @@ export const sortPostsByDate = (postsArray) => {
 }
 
 export const sortCommentsByDate = (commentsArray) => {
-  return commentsArray.sort((a,b) => {
-    if(a.createdAt < b.createdAt) {
+  const newCommentsArray = [].concat(commentsArray);
+  return newCommentsArray.sort((a,b) => {
+    if(a.createdAt > b.createdAt) {
       return -1;
     }
-    if (a.createdAt > b.createdAt) {
+    if (a.createdAt < b.createdAt) {
       return 1;
     }
   })

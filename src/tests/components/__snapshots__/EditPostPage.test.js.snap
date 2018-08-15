@@ -11,7 +11,7 @@ exports[`should render EditPostPage correctly 1`] = `
         "body": "This is the second post.The body has at least 24 characters.",
         "category": "General",
         "comments": Array [],
-        "createdAt": 1533201286279,
+        "createdAt": 1533201286299,
         "title": "The second post",
       }
     }
