@@ -1,44 +1,67 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
-import {startLogout} from '../actions/auth';
+import { startLogout } from '../actions/auth';
 
 export class Header extends React.Component {
   renderLinks = () => {
     if (this.props.auth.role === 'admin') {
-      return <Link to="/addpost">Add Post</Link>
+      return (
+        <li className="nav-item">
+          <Link to="/addpost" className="nav-link">Add Post</Link>
+        </li>
+      );
     } else if (!this.props.auth.id) {
       return (
         <div>
-          <Link to="/signup">Sign Up</Link>
-          <Link to="/signin">Sign In</Link>
+          <li className="nav-item d-inline-block">
+            <Link to="/signup" className="nav-link">Sign Up</Link>
+          </li>
+          <li className="nav-item d-inline-block">
+            <Link to="/signin" className="nav-link">Sign In</Link>
+          </li>
         </div>
-      )
+      );
     }
-  }
+  };
   renderSignOutButton = () => {
     if (this.props.auth.id) {
-      return <button name="signout" onClick={this.props.startLogout}>Sign Out</button>
+      return (
+        <li className="nav-item">
+        <button name="signout" onClick={this.props.startLogout} className="btn btn-light">
+          Sign Out
+        </button>
+        </li>
+      );
     }
-  }
-  render(){
+  };
+  render() {
     return (
-      <div>
-        <Link to="/">React Blog</Link>
-        {this.renderLinks()}
-        {this.renderSignOutButton()}
-    </div>  
-    )
+      <nav className="navbar navbar-expand-sm navbar-dark bg-dark mb-3">
+        <div className="container">
+          <Link to="/" className="navbar-brand">
+            React Blog
+          </Link>
+          <ul className="navbar-nav">
+            {this.renderLinks()}
+            {this.renderSignOutButton()}
+          </ul>
+        </div>
+      </nav>
+    );
   }
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   auth: state.auth
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  startLogout: (token) => dispatch(startLogout(token))
+const mapDispatchToProps = dispatch => ({
+  startLogout: token => dispatch(startLogout(token))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Header);
