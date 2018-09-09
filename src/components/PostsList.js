@@ -20,7 +20,6 @@ export class PostsList extends React.Component {
         await this.props.startSetPosts();
       }
     } catch (e) {
-      console.log(e.message);
       this.setState({ error: e.message });
     }
   }
