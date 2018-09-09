@@ -11,74 +11,87 @@ export class PostForm extends React.Component {
       category: props.post ? props.post.category : '',
       body: props.post ? props.post.body : '',
       errors: null
-    }
+    };
   }
-  onTitleChange = (e) => {
-    this.setState({title: e.target.value})
-  } 
-  onCategoryChange = (e) => {
-    this.setState({category: e.target.value})
-  } 
-  onBodyChange = (e) => {
-    this.setState({body: e.target.value})
-  } 
+  onTitleChange = e => {
+    this.setState({ title: e.target.value });
+  };
+  onCategoryChange = e => {
+    this.setState({ category: e.target.value });
+  };
+  onBodyChange = e => {
+    this.setState({ body: e.target.value });
+  };
   renderErrors = () => {
-    const {errors} = this.state;
+    const { errors } = this.state;
     if (errors) {
-      return this.state.errors.map((error) => <li>{error}</li>);
+      return this.state.errors.map(error => <li className="list-group-item list-group-item-danger">{error}</li>);
     }
-  }
-  onSubmit = (e) => {
+  };
+  onSubmit = e => {
     e.preventDefault();
 
-    const {title, category, body } = this.state;
+    const { title, category, body } = this.state;
     const errors = [];
     if (title.length < 4) {
-      errors.push('Title should have at least 4 characters.')
+      errors.push('Title should have at least 4 characters.');
     }
     if (category.length < 4) {
-      errors.push('Category should have at least 4 characters')
+      errors.push('Category should have at least 4 characters');
     }
     if (body.length < 24) {
-      errors.push('The post body should have at least 24 characters')
+      errors.push('The post body should have at least 24 characters');
     }
 
     if (errors.length >= 1) {
-      this.setState({errors});
+      this.setState({ errors });
     } else {
       const post = this.state;
-      this.props.onSubmit(post);  
+      this.props.onSubmit(post);
     }
-  }
+  };
   render() {
     return (
       <div>
-        <ul className="error-list">{this.renderErrors()}</ul>
+        <ul className="error-list error-list list-group mb-3">{this.renderErrors()}</ul>
         <form onSubmit={this.onSubmit}>
-          <label>Title</label>
-          <input 
-          type="text" 
-          onChange={this.onTitleChange}
-          value={this.state.title}
-          maxLength={60}
-          />
-          <label>Category</label>
-          <input
-          type="text"
-          onChange={this.onCategoryChange}
-          value={this.state.category}
-          maxLength={16}
-          />     
-          <label>Body</label>
-          <textarea
-          onChange={this.onBodyChange}
-          value={this.state.body}
-          maxLength={12000}
-          />
-          <button>Save Post</button>
+          <div className="form-group">
+            <label for="title">Title</label>
+            <input
+              type="text"
+              className="form-control"
+              name="title"
+              onChange={this.onTitleChange}
+              value={this.state.title}
+              maxLength={60}
+            />
+          </div>
+          <div className="form-group">
+            <label for="category">Category</label>
+            <input
+              type="text"
+              className="form-control"
+              name="category"
+              onChange={this.onCategoryChange}
+              value={this.state.category}
+              maxLength={16}
+            />
+          </div>
+          <div className="form-group">
+            <label for="body">Body</label>
+            <textarea
+              name="body"
+              className="form-control"
+              onChange={this.onBodyChange}
+              value={this.state.body}
+              maxLength={12000}
+              rows="10"
+            />
+          </div>
+          <button className="btn btn-primary btn-block">Save Post</button>
         </form>
       </div>
-    )
+    );
   }
 }
 

@@ -40,10 +40,11 @@ export class EditPostPage extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div className="container">
+      <button className="btn-delete btn btn-dark btn-sm float-right" onClick={this.deletePost}><i class="far fa-trash-alt mr-2"></i>
+      Delete Post</button>
         {this.renderError()}
         <PostForm post={this.props.post} onSubmit={this.onSubmit} />
-        <button className="btn-delete" onClick={this.deletePost}>Delete Post</button>
       </div>
     )
   }

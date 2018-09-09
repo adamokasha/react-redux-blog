@@ -9,7 +9,7 @@ export class Header extends React.Component {
     if (this.props.auth.role === 'admin') {
       return (
         <li className="nav-item">
-          <Link to="/addpost" className="nav-link">Add Post</Link>
+          <Link to="/addpost" className="nav-link d-inline-block"><i className="fas fa-pencil-alt"></i> Add Post</Link>
         </li>
       );
     } else if (!this.props.auth.id) {
@@ -29,7 +29,7 @@ export class Header extends React.Component {
     if (this.props.auth.id) {
       return (
         <li className="nav-item">
-        <button name="signout" onClick={this.props.startLogout} className="btn btn-light">
+        <button name="signout" onClick={this.props.startLogout} className="btn btn-secondary">
           Sign Out
         </button>
         </li>

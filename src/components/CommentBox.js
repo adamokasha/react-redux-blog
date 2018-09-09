@@ -12,14 +12,15 @@ export class CommentBox extends React.Component {
         <CommentForm id={this.props.id} />
       )
     }
+    return <p className="font-italic">You must be signed in to comment...</p>
   }
   renderComments = () => {
     if (this.props.comments.length > 0) {
       return sortCommentsByDate(this.props.comments).map((comment) => {
         return (
-          <li key={comment._id}>
-            <span>posted by {comment.createdBy} on {moment(comment.date).format('MM-DD-YY [at] HH:mm')}</span>
-            <p>{comment.comment}</p>
+          <li className="list-group-item pl-0" key={comment._id}>
+            <p className="text-muted mb-1">Posted by {comment.createdBy} on {moment(comment.date).format('MM-DD-YY [at] HH:mm')}</p>
+            <p className="mb-1">{comment.comment}</p>
           </li>
         )
       });
@@ -32,10 +33,11 @@ export class CommentBox extends React.Component {
   render() {
     return (
       <div>
+        <h4>Comments</h4>
         {
           this.renderCommentForm()
         }
-        <ul>
+        <ul className="list-group-flush pl-0">
           {
             this.renderComments()
           }

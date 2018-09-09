@@ -15,7 +15,7 @@ export class AddPostPage extends React.Component {
   renderError = () => {
     if(this.state.error) {
       return (
-        <div className="error-msg">
+        <div className="error-msg alert alert-danger" role="alert">
           <p>{this.state.error}</p>
         </div>
       )
@@ -31,7 +31,8 @@ export class AddPostPage extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div  className="container">
+        <h3 className="text-center mt-4">Add Post</h3>
         {this.renderError()}
         <PostForm onSubmit={this.onSubmit}/>
       </div>

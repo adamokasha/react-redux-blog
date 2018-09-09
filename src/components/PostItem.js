@@ -10,8 +10,8 @@ export const PostItem = ({auth, post}) => {
   function renderEditButton() {
     if (auth.role === 'admin') {
       return (
-        <Link to={`/posts/${post._id}/edit`}>
-          <button>Edit</button>
+        <Link to={`/posts/${post._id}/edit`} className="btn btn-dark btn-md float-right">
+          <i className="far fa-edit"></i> Edit
         </Link>
       )
     }
@@ -19,14 +19,15 @@ export const PostItem = ({auth, post}) => {
   return (
     <div>
       <Header />
-        <div>
+        <div className="container">
           <div>
-          <h3>{post.title}</h3>
-          <p>Posted by {post.author} on {moment(post.createdAt).format('MMMM Do YYYY')}.</p>
-          <p>{post.body}</p>
           {
             renderEditButton()
           }
+          <h2>{post.title}</h2>
+          <p className="text-muted">Posted by {post.author} on {moment(post.createdAt).format('MMMM Do YYYY')}.</p>
+          <p>{post.body}</p>
+          
         </div>
         <CommentBox id={post._id} comments={post.comments}/>
       </div>

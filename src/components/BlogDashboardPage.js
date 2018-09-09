@@ -1,18 +1,30 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import Header from './Header';
 import PostsList from './PostsList';
 
-const BlogDashboardPage = () => {
+export const BlogDashboardPage = ({ displayName }) => {
+  function renderWelcome() {
+    if (displayName) {
+      return <h3>Welcome {displayName}.</h3>;
+    }
+    return;
+  }
   return (
     <div>
       <Header />
+      <br></br>
+      <div className="container mb-3">{renderWelcome()}</div>
       <div>
-        <h1>Welcome to the blog dashboard page</h1>
         <PostsList />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default BlogDashboardPage;
+const mapStateToProps = state => ({
+  displayName: state.auth.displayName
+});
+
+export default connect(mapStateToProps)(BlogDashboardPage);
