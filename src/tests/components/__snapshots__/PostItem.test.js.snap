@@ -3,15 +3,20 @@
 exports[`should render a single post 1`] = `
 <div>
   <Connect(Header) />
-  <div>
+  <div
+    className="container"
+  >
     <div>
-      <h3>
+      <h2>
         The first post
-      </h3>
-      <p>
+      </h2>
+      <p
+        className="text-muted"
+      >
         Posted by 
         UserOne
-         on 
+         on
+         
         August 2nd 2018
         .
       </p>

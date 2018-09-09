@@ -48,7 +48,8 @@ test('should call startSignup if form input completely valid', () => {
   const user = {
     displayName: 'validUser',
     email: 'valid@email.com',
-    password: '123abc'
+    password: '123abc',
+    passwordConfirm: '123abc'
   };
   const startSignup = jest.fn();
   const wrapper = shallow(<SignupPage startSignup={startSignup}/>);

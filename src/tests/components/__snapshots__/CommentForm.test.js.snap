@@ -1,16 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render CommentForm correctly 1`] = `
-<div>
+<div
+  className="mb-3"
+>
   <form
     onSubmit={[Function]}
   >
-    <textarea
-      maxLength={128}
-      onChange={[Function]}
-      placeholder="Leave a comment..."
-    />
-    <button>
+    <div
+      className="form-group col-md-4 pl-0 mb-2"
+    >
+      <textarea
+        className="form-control"
+        maxLength={128}
+        onChange={[Function]}
+        placeholder="Leave a comment..."
+        rows="3"
+      />
+    </div>
+    <button
+      className="btn btn-primary"
+    >
       Add Comment
     </button>
   </form>

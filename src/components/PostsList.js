@@ -39,7 +39,7 @@ export class PostsList extends React.Component {
               {this.props.posts.length >= 1
                 ? this.props.posts.map(post => {
                     return (
-                      <div className="card">
+                      <div key={post._id} className="card">
                         <div className="card-body">
                           <h4 className="card-title">{post.title}</h4>
                           <h6 className="card-subtitle text-muted">

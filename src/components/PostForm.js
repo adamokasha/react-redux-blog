@@ -25,7 +25,7 @@ export class PostForm extends React.Component {
   renderErrors = () => {
     const { errors } = this.state;
     if (errors) {
-      return this.state.errors.map(error => <li className="list-group-item list-group-item-danger">{error}</li>);
+      return this.state.errors.map((error, i) => <li key={i} className="list-group-item list-group-item-danger">{error}</li>);
     }
   };
   onSubmit = e => {

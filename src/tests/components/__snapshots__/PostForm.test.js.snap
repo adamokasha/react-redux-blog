@@ -3,38 +3,65 @@
 exports[`should render PostForm correctly 1`] = `
 <div>
   <ul
-    className="error-list"
+    className="error-list error-list list-group mb-3"
   />
   <form
     onSubmit={[Function]}
   >
-    <label>
-      Title
-    </label>
-    <input
-      maxLength={60}
-      onChange={[Function]}
-      type="text"
-      value=""
-    />
-    <label>
-      Category
-    </label>
-    <input
-      maxLength={16}
-      onChange={[Function]}
-      type="text"
-      value=""
-    />
-    <label>
-      Body
-    </label>
-    <textarea
-      maxLength={12000}
-      onChange={[Function]}
-      value=""
-    />
-    <button>
+    <div
+      className="form-group"
+    >
+      <label
+        for="title"
+      >
+        Title
+      </label>
+      <input
+        className="form-control"
+        maxLength={60}
+        name="title"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        for="category"
+      >
+        Category
+      </label>
+      <input
+        className="form-control"
+        maxLength={16}
+        name="category"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        for="body"
+      >
+        Body
+      </label>
+      <textarea
+        className="form-control"
+        maxLength={12000}
+        name="body"
+        onChange={[Function]}
+        rows="10"
+        value=""
+      />
+    </div>
+    <button
+      className="btn btn-primary btn-block"
+    >
       Save Post
     </button>
   </form>
@@ -44,38 +71,65 @@ exports[`should render PostForm correctly 1`] = `
 exports[`should render PostForm with post data 1`] = `
 <div>
   <ul
-    className="error-list"
+    className="error-list error-list list-group mb-3"
   />
   <form
     onSubmit={[Function]}
   >
-    <label>
-      Title
-    </label>
-    <input
-      maxLength={60}
-      onChange={[Function]}
-      type="text"
-      value="The first post"
-    />
-    <label>
-      Category
-    </label>
-    <input
-      maxLength={16}
-      onChange={[Function]}
-      type="text"
-      value="General"
-    />
-    <label>
-      Body
-    </label>
-    <textarea
-      maxLength={12000}
-      onChange={[Function]}
-      value="This is the first post. The body has at least 24 characters."
-    />
-    <button>
+    <div
+      className="form-group"
+    >
+      <label
+        for="title"
+      >
+        Title
+      </label>
+      <input
+        className="form-control"
+        maxLength={60}
+        name="title"
+        onChange={[Function]}
+        type="text"
+        value="The first post"
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        for="category"
+      >
+        Category
+      </label>
+      <input
+        className="form-control"
+        maxLength={16}
+        name="category"
+        onChange={[Function]}
+        type="text"
+        value="General"
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        for="body"
+      >
+        Body
+      </label>
+      <textarea
+        className="form-control"
+        maxLength={12000}
+        name="body"
+        onChange={[Function]}
+        rows="10"
+        value="This is the first post. The body has at least 24 characters."
+      />
+    </div>
+    <button
+      className="btn btn-primary btn-block"
+    >
       Save Post
     </button>
   </form>

@@ -12,7 +12,7 @@ test('should render a single post', () => {
 
 test('should render edit button if user role is admin', () => {
   const wrapper = shallow(<PostItem post={posts[0]} auth={withAdminRole}/>);
-  expect(wrapper.find('Link button').length).toBe(1);
+  expect(wrapper.find('Link i.fa-edit').length).toBe(1);
 });
 
 test('should not render edit button if user role is user', () => {

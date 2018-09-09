@@ -1,7 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render AddPostPage component 1`] = `
-<div>
+<div
+  className="container"
+>
+  <h3
+    className="text-center mt-4"
+  >
+    Add Post
+  </h3>
   <PostForm
     onSubmit={[Function]}
   />

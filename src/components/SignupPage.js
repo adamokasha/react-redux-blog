@@ -31,8 +31,8 @@ export class SignupPage extends React.Component {
   renderErrors = () => {
     const { errors } = this.state;
     if (errors && errors.length >= 1) {
-      return errors.map(error => {
-        return <li className="list-group-item list-group-item-danger">{error}</li>;
+      return errors.map((error, i) => {
+        return <li key={i} className="list-group-item list-group-item-danger">{error}</li>;
       });
     }
   };
@@ -108,11 +108,11 @@ export class SignupPage extends React.Component {
             />
           </div>
           <div className="form-group">
-            <label for="password">Confirm Password:</label>
+            <label for="passwordConfirm">Confirm Password:</label>
             <input
               className="form-control"
               type="password"
-              name="password"
+              name="passwordConfirm"
               placeholder="Re-enter your password"
               onChange={this.onPasswordConfirmChange}
             />

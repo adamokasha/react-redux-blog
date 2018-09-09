@@ -1,26 +1,47 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render header component 1`] = `
-<div>
-  <Link
-    replace={false}
-    to="/"
+<nav
+  className="navbar navbar-expand-sm navbar-dark bg-dark mb-3"
+>
+  <div
+    className="container"
   >
-    React Blog
-  </Link>
-  <div>
     <Link
+      className="navbar-brand"
       replace={false}
-      to="/signup"
+      to="/"
     >
-      Sign Up
+      React Blog
     </Link>
-    <Link
-      replace={false}
-      to="/signin"
+    <ul
+      className="navbar-nav"
     >
-      Sign In
-    </Link>
+      <div>
+        <li
+          className="nav-item d-inline-block"
+        >
+          <Link
+            className="nav-link"
+            replace={false}
+            to="/signup"
+          >
+            Sign Up
+          </Link>
+        </li>
+        <li
+          className="nav-item d-inline-block"
+        >
+          <Link
+            className="nav-link"
+            replace={false}
+            to="/signin"
+          >
+            Sign In
+          </Link>
+        </li>
+      </div>
+    </ul>
   </div>
-</div>
+</nav>
 `;

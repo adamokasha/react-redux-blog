@@ -1,7 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render EditPostPage correctly 1`] = `
-<div>
+<div
+  className="container"
+>
+  <button
+    className="btn-delete btn btn-dark btn-sm float-right"
+    onClick={[Function]}
+  >
+    <i
+      class="far fa-trash-alt mr-2"
+    />
+    Delete Post
+  </button>
   <PostForm
     onSubmit={[Function]}
     post={
@@ -16,11 +27,5 @@ exports[`should render EditPostPage correctly 1`] = `
       }
     }
   />
-  <button
-    className="btn-delete"
-    onClick={[Function]}
-  >
-    Delete Post
-  </button>
 </div>
 `;

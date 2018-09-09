@@ -3,10 +3,17 @@
 exports[`should render ExpenseDashBoardPage correctly 1`] = `
 <div>
   <Connect(Header) />
+  <br />
+  <div
+    className="container mb-3"
+  >
+    <h3>
+      Welcome 
+      theuser
+      .
+    </h3>
+  </div>
   <div>
-    <h1>
-      Welcome to the blog dashboard page
-    </h1>
     <Connect(PostsList) />
   </div>
 </div>

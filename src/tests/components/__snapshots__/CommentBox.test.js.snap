@@ -2,7 +2,17 @@
 
 exports[`should render CommentBox correctly 1`] = `
 <div>
-  <ul>
+  <h4>
+    Comments
+  </h4>
+  <p
+    className="font-italic"
+  >
+    You must be signed in to comment...
+  </p>
+  <ul
+    className="list-group-flush pl-0"
+  >
     <p>
       Be the first to comment...
     </p>
@@ -12,10 +22,15 @@ exports[`should render CommentBox correctly 1`] = `
 
 exports[`should render CommentForm if user logged in 1`] = `
 <div>
+  <h4>
+    Comments
+  </h4>
   <Connect(CommentForm)
     id="5b62cb86efcae617d8a0bef9"
   />
-  <ul>
+  <ul
+    className="list-group-flush pl-0"
+  >
     <p>
       Be the first to comment...
     </p>

@@ -1,26 +1,58 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render LoginPage correctly 1`] = `
-<div>
+<div
+  className="container mt-4"
+>
+  <h3
+    className="mb-3 text-center"
+  >
+    Sign In
+  </h3>
   <form
     onSubmit={[Function]}
   >
-    <input
-      autoFocus={true}
-      name="email"
-      onChange={[Function]}
-      type="text"
-    />
-    <input
-      name="password"
-      onChange={[Function]}
-      type="password"
-    />
-    <button
-      disabled={true}
+    <div
+      className="form-group"
     >
-      Login
-    </button>
+      <label
+        for="email"
+      >
+        Email
+      </label>
+      <input
+        autoFocus={true}
+        className="form-control"
+        name="email"
+        onChange={[Function]}
+        type="text"
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        for="password"
+      >
+        Password
+      </label>
+      <input
+        className="form-control"
+        name="password"
+        onChange={[Function]}
+        type="password"
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <button
+        className="btn btn-primary btn-block"
+        disabled={true}
+      >
+        Login
+      </button>
+    </div>
   </form>
 </div>
 `;
