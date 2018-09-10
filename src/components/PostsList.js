@@ -25,9 +25,14 @@ export class PostsList extends React.Component {
   }
   handleFetchStatus = () => {
     if (this.state.error) {
-      return <p>{this.state.error}</p>;
+      return <p className="text-monospace alert-danger text-center">{this.state.error}</p>;
     } else {
-      return <p>Fetching posts...</p>;
+      return (
+        <div className="loader-container">
+          <p className="text-monospace loading-text text-center">Fetching posts...</p>
+          <p className="text-monospace loading-text text-center">Please wait...</p>
+        </div>
+        );
     }
   };
   renderThumbnail(post) {
