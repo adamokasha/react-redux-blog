@@ -1,8 +1,8 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React from "react";
+import { connect } from "react-redux";
 
-import Header from './Header';
-import PostsList from './PostsList';
+import Header from "./Header";
+import PostsList from "./PostsList";
 
 export const BlogDashboardPage = ({ displayName }) => {
   function renderWelcome() {
@@ -22,7 +22,11 @@ export const BlogDashboardPage = ({ displayName }) => {
                 <h1 className="text-white mb-5">
                   React Blog - Responsive blog styled with Bootstrap 4
                 </h1>
-                <a href="https://github.com/samokasha/react-redux-blog" target="_blank" className="text-uppercase text-white hero-link">
+                <a
+                  href="https://github.com/samokasha/react-redux-blog"
+                  target="_blank"
+                  className="text-uppercase text-white hero-link"
+                >
                   <u>Learn More</u>
                 </a>
               </div>

@@ -1,18 +1,18 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import validator from 'validator';
+import React from "react";
+import { connect } from "react-redux";
+import validator from "validator";
 
-import { startSignup } from '../actions/auth';
+import { startSignup } from "../actions/auth";
 
 export class SignupPage extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      displayName: '',
-      email: '',
-      password: '',
-      passwordConfirm: '',
+      displayName: "",
+      email: "",
+      password: "",
+      passwordConfirm: "",
       errors: null
     };
   }
@@ -35,7 +35,11 @@ export class SignupPage extends React.Component {
     const { errors } = this.state;
     if (errors && errors.length >= 1) {
       return errors.map((error, i) => {
-        return <li key={i} className="list-group-item list-group-item-danger">{error}</li>;
+        return (
+          <li key={i} className="list-group-item list-group-item-danger">
+            {error}
+          </li>
+        );
       });
     }
   };
@@ -46,16 +50,16 @@ export class SignupPage extends React.Component {
     const errors = [];
 
     if (displayName.length < 6 || displayName.length > 12) {
-      errors.push('Display name must be between 6 and 12 characters.');
+      errors.push("Display name must be between 6 and 12 characters.");
     }
     if (!validator.isEmail(email)) {
-      errors.push('Please enter a valid email.');
+      errors.push("Please enter a valid email.");
     }
     if (password.length < 6 || password.length > 12) {
-      errors.push('Password must be between 6 and 12 characters');
+      errors.push("Password must be between 6 and 12 characters");
     }
     if (!validator.equals(password, passwordConfirm)) {
-      errors.push('Passwords must match');
+      errors.push("Passwords must match");
     }
 
     if (errors.length >= 1) {
@@ -63,7 +67,7 @@ export class SignupPage extends React.Component {
     } else {
       try {
         await this.props.startSignup(displayName, email, password);
-        this.props.history.push('/');
+        this.props.history.push("/");
       } catch (e) {
         const errors = [];
         Object.keys(e).forEach(key => {
@@ -77,56 +81,58 @@ export class SignupPage extends React.Component {
     return (
       <div className="container mt-4">
         <div className="row">
-        <div className="container col-lg-5">
-        <h3 className="mb-3 text-center">Sign Up</h3>
-        <ul className="error-list list-group mb-3">{this.renderErrors()}</ul>
-        <form onSubmit={this.onSubmit}>
-          <div className="form-group">
-            <label htmlFor="displayname">Display Name:</label>
-            <input
-              className="form-control"
-              type="text"
-              name="displayname"
-              placeholder="Enter a 6-12 character display name"
-              onChange={this.onDisplayNameChange}
-              autoFocus
-            />
+          <div className="container col-lg-5">
+            <h3 className="mb-3 text-center">Sign Up</h3>
+            <ul className="error-list list-group mb-3">
+              {this.renderErrors()}
+            </ul>
+            <form onSubmit={this.onSubmit}>
+              <div className="form-group">
+                <label htmlFor="displayname">Display Name:</label>
+                <input
+                  className="form-control"
+                  type="text"
+                  name="displayname"
+                  placeholder="Enter a 6-12 character display name"
+                  onChange={this.onDisplayNameChange}
+                  autoFocus
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="email">Email:</label>
+                <input
+                  className="form-control"
+                  type="text"
+                  name="email"
+                  placeholder="Enter a valid email"
+                  onChange={this.onEmailChange}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="password">Password:</label>
+                <input
+                  className="form-control"
+                  type="password"
+                  name="password"
+                  placeholder="Enter a 6-12 character password"
+                  onChange={this.onPasswordChange}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="passwordConfirm">Confirm Password:</label>
+                <input
+                  className="form-control"
+                  type="password"
+                  name="passwordConfirm"
+                  placeholder="Re-enter your password"
+                  onChange={this.onPasswordConfirmChange}
+                />
+              </div>
+              <div className="form-group">
+                <button className="btn btn-primary btn-block">Signup</button>
+              </div>
+            </form>
           </div>
-          <div className="form-group">
-            <label htmlFor="email">Email:</label>
-            <input
-              className="form-control"
-              type="text"
-              name="email"
-              placeholder="Enter a valid email"
-              onChange={this.onEmailChange}
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="password">Password:</label>
-            <input
-              className="form-control"
-              type="password"
-              name="password"
-              placeholder="Enter a 6-12 character password"
-              onChange={this.onPasswordChange}
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="passwordConfirm">Confirm Password:</label>
-            <input
-              className="form-control"
-              type="password"
-              name="passwordConfirm"
-              placeholder="Re-enter your password"
-              onChange={this.onPasswordConfirmChange}
-            />
-          </div>
-          <div className="form-group">
-            <button className="btn btn-primary btn-block">Signup</button>
-          </div>
-        </form>
-        </div>
         </div>
       </div>
     );

@@ -1,10 +1,10 @@
-import React from 'react';
-import { shallow } from 'enzyme';
+import React from "react";
+import { shallow } from "enzyme";
 
-import { BlogDashboardPage } from '../../components/BlogDashboardPage';
-import { withUserRole } from '../fixtures/auth';
+import { BlogDashboardPage } from "../../components/BlogDashboardPage";
+import { withUserRole } from "../fixtures/auth";
 
-test('should render ExpenseDashBoardPage correctly', () => {
+test("should render ExpenseDashBoardPage correctly", () => {
   const wrapper = shallow(
     <BlogDashboardPage displayName={withUserRole.displayName} />
   );

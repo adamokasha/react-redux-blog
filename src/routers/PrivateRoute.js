@@ -1,8 +1,8 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { Route, Redirect } from 'react-router-dom';
+import React from "react";
+import { connect } from "react-redux";
+import { Route, Redirect } from "react-router-dom";
 
-import Header from '../components/Header';
+import Header from "../components/Header";
 
 const PrivateRoute = ({ component: Component, isAuthenticated, ...rest }) => (
   <Route

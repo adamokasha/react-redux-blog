@@ -1,18 +1,18 @@
-import React from 'react';
+import React from "react";
 
 export class PostForm extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      _id: props.post ? props.post._id : '',
-      title: props.post ? props.post.title : '',
+      _id: props.post ? props.post._id : "",
+      title: props.post ? props.post.title : "",
       createdAt: props.post ? props.post.createdAt : Date.now(),
-      category: props.post ? props.post.category : '',
-      mainImage: props.post ? props.post.mainImage : '',
-      thumbnail: props.post ? props.post.thumbnail : '',
-      body: props.post ? props.post.body : '',
-      errors: ''
+      category: props.post ? props.post.category : "",
+      mainImage: props.post ? props.post.mainImage : "",
+      thumbnail: props.post ? props.post.thumbnail : "",
+      body: props.post ? props.post.body : "",
+      errors: ""
     };
   }
   onTitleChange = e => {
@@ -46,13 +46,13 @@ export class PostForm extends React.Component {
     const { title, category, body } = this.state;
     const errors = [];
     if (title.length < 4) {
-      errors.push('Title should have at least 4 characters.');
+      errors.push("Title should have at least 4 characters.");
     }
     if (category.length < 4) {
-      errors.push('Category should have at least 4 characters');
+      errors.push("Category should have at least 4 characters");
     }
     if (body.length < 24) {
-      errors.push('The post body should have at least 24 characters');
+      errors.push("The post body should have at least 24 characters");
     }
 
     if (errors.length >= 1) {

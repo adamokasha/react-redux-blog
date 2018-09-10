@@ -1,8 +1,8 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { Route, Redirect } from 'react-router-dom';
+import React from "react";
+import { connect } from "react-redux";
+import { Route, Redirect } from "react-router-dom";
 
-import Header from '../components/Header';
+import Header from "../components/Header";
 
 const PrivateRoute = ({ component: Component, isAdmin, ...rest }) => (
   <Route
@@ -22,7 +22,7 @@ const PrivateRoute = ({ component: Component, isAdmin, ...rest }) => (
 );
 
 const mapStateToProps = state => ({
-  isAdmin: state.auth.role === 'admin'
+  isAdmin: state.auth.role === "admin"
 });
 
 export default connect(mapStateToProps)(PrivateRoute);

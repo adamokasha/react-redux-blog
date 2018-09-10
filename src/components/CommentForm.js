@@ -1,15 +1,15 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React from "react";
+import { connect } from "react-redux";
 
-import { startAddComment } from '../actions/posts';
+import { startAddComment } from "../actions/posts";
 
 export class CommentForm extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      comment: '',
-      error: ''
+      comment: "",
+      error: ""
     };
   }
   onCommentChange = e => {
@@ -25,11 +25,11 @@ export class CommentForm extends React.Component {
 
     const { comment } = this.state;
     if (comment.length < 8 || comment.length > 128) {
-      this.setState({ error: 'Comment must be between 8 and 128 characters.' });
+      this.setState({ error: "Comment must be between 8 and 128 characters." });
     } else {
-      this.setState({ error: '' });
+      this.setState({ error: "" });
       this.props.startAddComment(this.props.id, this.state.comment);
-      this.setState({ comment: '' });
+      this.setState({ comment: "" });
     }
   };
   render() {

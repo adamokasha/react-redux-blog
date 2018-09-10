@@ -1,12 +1,12 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
+import React from "react";
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
-import { startLogout } from '../actions/auth';
+import { startLogout } from "../actions/auth";
 
 export class Header extends React.Component {
   renderLinks = () => {
-    if (this.props.auth.role === 'admin') {
+    if (this.props.auth.role === "admin") {
       return (
         <li className="nav-item d-sm-inline-block">
           <Link to="/addpost" className="nav-link">

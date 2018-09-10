@@ -1,35 +1,35 @@
-import axios from 'axios';
+import axios from "axios";
 
-export const setPosts = (posts) => ({
-  type: 'SET_POSTS',
+export const setPosts = posts => ({
+  type: "SET_POSTS",
   posts
 });
 
 export const startSetPosts = () => {
-  return async (dispatch) => {
+  return async dispatch => {
     try {
       const response = await axios.get(`${process.env.API_URI}/posts`);
       dispatch(setPosts(response.data.posts));
     } catch (e) {
-      throw new Error('Could not retrieve posts...')
+      throw new Error("Could not retrieve posts...");
     }
-  }
-}
+  };
+};
 
-export const addPost = (post) => ({
-  type: 'ADD_POST',
+export const addPost = post => ({
+  type: "ADD_POST",
   post
 });
 
-export const startAddPost = (post) => {
-  return async (dispatch) => {
-    const {token} = JSON.parse(localStorage.getItem('auth'));
+export const startAddPost = post => {
+  return async dispatch => {
+    const { token } = JSON.parse(localStorage.getItem("auth"));
     try {
       const response = await axios({
         url: `${process.env.API_URI}/posts`,
-        method: 'post',
+        method: "post",
         headers: {
-          'x-auth': token,
+          "x-auth": token
         },
         data: post
       });
@@ -38,23 +38,23 @@ export const startAddPost = (post) => {
     } catch (e) {
       throw new Error(e.response.data.error);
     }
-  }
-}
+  };
+};
 
-export const editPost = (updates) => ({
-  type: 'EDIT_POST',
+export const editPost = updates => ({
+  type: "EDIT_POST",
   updates
 });
 
 export const startEditPost = (post, id) => {
-  return async (dispatch) => {
-    const {token} = JSON.parse(localStorage.getItem('auth'));
+  return async dispatch => {
+    const { token } = JSON.parse(localStorage.getItem("auth"));
     try {
       const response = await axios({
         url: `${process.env.API_URI}/posts/${id}`,
-        method: 'patch',
+        method: "patch",
         headers: {
-          'x-auth': token,
+          "x-auth": token
         },
         data: post
       });
@@ -63,23 +63,23 @@ export const startEditPost = (post, id) => {
     } catch (e) {
       throw new Error(e.response.data.error);
     }
-  }
-}
+  };
+};
 
-export const deletePost = (id) => ({
-  type: 'DELETE_POST',
+export const deletePost = id => ({
+  type: "DELETE_POST",
   id
 });
 
-export const startDeletePost = (id) => {
-  return async (dispatch) => {
-    const {token} = JSON.parse(localStorage.getItem('auth'));
+export const startDeletePost = id => {
+  return async dispatch => {
+    const { token } = JSON.parse(localStorage.getItem("auth"));
     try {
       const response = await axios({
         url: `${process.env.API_URI}/posts/${id}/`,
-        method: 'delete',
+        method: "delete",
         headers: {
-          'x-auth': token,
+          "x-auth": token
         }
       });
 
@@ -87,24 +87,24 @@ export const startDeletePost = (id) => {
     } catch (e) {
       throw new Error(e.response.data.error);
     }
-  }
-}
+  };
+};
 
 export const addComment = (id, comment) => ({
-  type: 'ADD_COMMENT',
+  type: "ADD_COMMENT",
   id,
   comment
 });
 
 export const startAddComment = (id, comment) => {
-  return async (dispatch) => {
+  return async dispatch => {
     try {
-      const {token} = JSON.parse(localStorage.getItem('auth'));
+      const { token } = JSON.parse(localStorage.getItem("auth"));
       const response = await axios({
         url: `${process.env.API_URI}/posts/${id}/comments`,
-        method: 'post',
+        method: "post",
         headers: {
-          'x-auth': token,
+          "x-auth": token
         },
         data: {
           comment
@@ -115,5 +115,5 @@ export const startAddComment = (id, comment) => {
     } catch (e) {
       throw new Error(e.response.data.error);
     }
-  }
-}
+  };
+};

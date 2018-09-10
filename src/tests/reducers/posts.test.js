@@ -1,74 +1,73 @@
-import postsReducer from '../../reducers/posts';
-import posts from '../fixtures/posts';
+import postsReducer from "../../reducers/posts";
+import posts from "../fixtures/posts";
 
-test('should set default state', () => {
-  const state = postsReducer(undefined, {type: '@@INIT'});
+test("should set default state", () => {
+  const state = postsReducer(undefined, { type: "@@INIT" });
   expect(state).toEqual([]);
 });
 
-test('should set posts', () => {
+test("should set posts", () => {
   const action = {
-    type: 'SET_POSTS',
+    type: "SET_POSTS",
     posts
-  }
-  const state = postsReducer(undefined, action)
+  };
+  const state = postsReducer(undefined, action);
   expect(state).toEqual(posts);
 });
 
-
-test('should add a new post', () => {
+test("should add a new post", () => {
   const newPost = {
-    "_id" : "5h62er83edprme893d8a0bef2",
-    "author" : "new_user",
-    "category" : "React",
-    "title" : "A post about react",
-    "body" : "This is the third post.The body has at least 24 characters.",
-    "createdAt" : 1533201289999.0,
-    "comments" : [],
-  }
+    _id: "5h62er83edprme893d8a0bef2",
+    author: "new_user",
+    category: "React",
+    title: "A post about react",
+    body: "This is the third post.The body has at least 24 characters.",
+    createdAt: 1533201289999.0,
+    comments: []
+  };
   const action = {
-    type: 'ADD_POST',
+    type: "ADD_POST",
     post: newPost
-  }
-  const state = postsReducer(posts, action)
+  };
+  const state = postsReducer(posts, action);
   expect(state).toEqual([...posts, newPost]);
 });
 
-test('should edit an existing post', () => {
+test("should edit an existing post", () => {
   const editedPost = {
-    "_id" : "5b62cb86efcae617d8a0bef8",
-    "author" : "UserTwo",
-    "category" : "EDITED",
-    "title" : "This is an edited post",
-    "body" : "This is the second post.It has been edited.",
+    _id: "5b62cb86efcae617d8a0bef8",
+    author: "UserTwo",
+    category: "EDITED",
+    title: "This is an edited post",
+    body: "This is the second post.It has been edited.",
     mainImage: "",
     thumbnail: "",
-    "createdAt" : 1533201286279.0,
-    "comments" : [],
-  }
+    createdAt: 1533201286279.0,
+    comments: []
+  };
   const action = {
-    type: 'EDIT_POST',
+    type: "EDIT_POST",
     updates: editedPost
-  }
-  const state = postsReducer(posts, action)
+  };
+  const state = postsReducer(posts, action);
   expect(state).toEqual([posts[0], editedPost]);
 });
 
-test('should add a comment to a post', () => {
+test("should add a comment to a post", () => {
   const action = {
-    type: 'ADD_COMMENT',
+    type: "ADD_COMMENT",
     id: posts[1]._id,
-    comment: 'A brilliant comment'
+    comment: "A brilliant comment"
   };
   const state = postsReducer(posts, action);
   expect(state[1].comments.length).toBe(1);
 });
 
-test('should delete a post', () => {
+test("should delete a post", () => {
   const action = {
-    type: 'DELETE_POST',
+    type: "DELETE_POST",
     id: posts[1]._id
-  }
+  };
   const state = postsReducer(posts, action);
   expect(state.length).toBe(1);
 });

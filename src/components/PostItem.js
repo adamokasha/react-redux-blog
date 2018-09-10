@@ -1,18 +1,18 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import moment from 'moment';
+import React from "react";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import moment from "moment";
 
-import Header from './Header';
-import CommentBox from './CommentBox';
-import { startSetPosts } from '../actions/posts';
+import Header from "./Header";
+import CommentBox from "./CommentBox";
+import { startSetPosts } from "../actions/posts";
 
 export class PostItem extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      error: ''
+      error: ""
     };
   }
   async componentDidMount() {
@@ -26,7 +26,7 @@ export class PostItem extends React.Component {
     }
   }
   renderEditButton() {
-    if (this.props.auth.role === 'admin') {
+    if (this.props.auth.role === "admin") {
       return (
         <Link
           to={`/posts/${this.props.post._id}/edit`}
@@ -40,7 +40,10 @@ export class PostItem extends React.Component {
   renderMainImage(post) {
     if (post.mainImage) {
       return (
-        <img src={post.mainImage} className="img-fluid rounded float-left mr-3 mb-3 d-none d-md-inline-block w-50" />
+        <img
+          src={post.mainImage}
+          className="img-fluid rounded float-left mr-3 mb-3 d-none d-md-inline-block w-50"
+        />
       );
     }
   }
@@ -52,8 +55,8 @@ export class PostItem extends React.Component {
             {this.renderEditButton()}
             <h2>{this.props.post.title}</h2>
             <p className="text-muted">
-              Posted by {this.props.post.author} on{' '}
-              {moment(this.props.post.createdAt).format('MMMM Do YYYY')}.
+              Posted by {this.props.post.author} on{" "}
+              {moment(this.props.post.createdAt).format("MMMM Do YYYY")}.
             </p>
             {this.renderMainImage(this.props.post)}
             <p>{this.props.post.body}</p>
@@ -71,7 +74,7 @@ export class PostItem extends React.Component {
           Could not retrieve post...
           <Link to="/" className="alert-link">
             Click here
-          </Link>{' '}
+          </Link>{" "}
           to go back to dashboard.
         </div>
       </div>

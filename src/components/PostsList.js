@@ -1,17 +1,17 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import moment from 'moment';
+import React from "react";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import moment from "moment";
 
-import { startSetPosts } from '../actions/posts';
-import { sortPostsByDate } from '../selectors/posts';
+import { startSetPosts } from "../actions/posts";
+import { sortPostsByDate } from "../selectors/posts";
 
 export class PostsList extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      error: ''
+      error: ""
     };
   }
   async componentDidMount() {
@@ -28,17 +28,25 @@ export class PostsList extends React.Component {
       // return <p className="text-monospace alert-danger text-center">{this.state.error}</p>;
       return (
         <div className="loader-container">
-          <p className="text-monospace loading-text text-center">Fetching posts...</p>
-          <p className="text-monospace loading-text text-center">Please wait...</p>
+          <p className="text-monospace loading-text text-center">
+            Fetching posts...
+          </p>
+          <p className="text-monospace loading-text text-center">
+            Please wait...
+          </p>
         </div>
-        );
+      );
     } else {
       return (
         <div className="loader-container">
-          <p className="text-monospace loading-text text-center">Fetching posts...</p>
-          <p className="text-monospace loading-text text-center">Please wait...</p>
+          <p className="text-monospace loading-text text-center">
+            Fetching posts...
+          </p>
+          <p className="text-monospace loading-text text-center">
+            Please wait...
+          </p>
         </div>
-        );
+      );
     }
   };
   renderThumbnail(post) {
@@ -60,13 +68,15 @@ export class PostsList extends React.Component {
                         <div className="card-body">
                           <h4 className="card-title">{post.title}</h4>
                           <h6 className="card-subtitle text-muted mb-3">
-                            Posted by {post.author} on{' '}
-                            {moment(post.createdAt).format('MMM Do YYYY')}
+                            Posted by {post.author} on{" "}
+                            {moment(post.createdAt).format("MMM Do YYYY")}
                           </h6>
                           <p className="card-text">
-                            {post.body.substring(0, 120) + '...'}
+                            {post.body.substring(0, 120) + "..."}
                           </p>
-                          <span className="badge badge-info">{post.category}</span>
+                          <span className="badge badge-info">
+                            {post.category}
+                          </span>
                         </div>
                         <div className="card-footer bg-white">
                           <Link
