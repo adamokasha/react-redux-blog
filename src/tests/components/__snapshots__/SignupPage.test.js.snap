@@ -15,9 +15,6 @@ exports[`should render SignupPage correctly 1`] = `
       >
         Sign Up
       </h3>
-      <ul
-        className="error-list list-group mb-3"
-      />
       <form
         onSubmit={[Function]}
       >

@@ -2,9 +2,6 @@
 
 exports[`should render PostForm correctly 1`] = `
 <div>
-  <ul
-    className="error-list error-list list-group mb-3"
-  />
   <form
     onSubmit={[Function]}
   >
@@ -104,9 +101,6 @@ exports[`should render PostForm correctly 1`] = `
 
 exports[`should render PostForm with post data 1`] = `
 <div>
-  <ul
-    className="error-list error-list list-group mb-3"
-  />
   <form
     onSubmit={[Function]}
   >
