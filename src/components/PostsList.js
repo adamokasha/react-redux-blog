@@ -25,7 +25,13 @@ export class PostsList extends React.Component {
   }
   handleFetchStatus = () => {
     if (this.state.error) {
-      return <p className="text-monospace alert-danger text-center">{this.state.error}</p>;
+      // return <p className="text-monospace alert-danger text-center">{this.state.error}</p>;
+      return (
+        <div className="loader-container">
+          <p className="text-monospace loading-text text-center">Fetching posts...</p>
+          <p className="text-monospace loading-text text-center">Please wait...</p>
+        </div>
+        );
     } else {
       return (
         <div className="loader-container">
