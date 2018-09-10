@@ -14,6 +14,9 @@ export class LoginPage extends React.Component {
       error: ''
     };
   }
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
   onEmailChange = e => {
     this.setState({ email: e.target.value }, () => {
       !validator.isEmail(this.state.email)

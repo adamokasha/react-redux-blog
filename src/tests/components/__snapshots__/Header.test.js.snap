@@ -12,7 +12,11 @@ exports[`should render header component 1`] = `
       replace={false}
       to="/"
     >
-      React Blog
+      <h3
+        className="mb-0"
+      >
+        React Blog
+      </h3>
     </Link>
     <button
       aria-expanded="false"

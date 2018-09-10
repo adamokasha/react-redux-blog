@@ -1,7 +1,7 @@
 @import './bootstrap';
 
 body {
-  margin-top: 88px;
+  margin-top: 91px;
 }
 
 p {
@@ -14,6 +14,14 @@ p {
   background: #fff;
 }
 
+.navbar-brand {
+  font-weight: 600;
+}
+
+.nav-item {
+  font-size: 1.15rem;
+}
+
 #landing {
   position: relative;
   background: url(https://i.imgur.com/9goHfVj.jpg);
@@ -21,7 +29,6 @@ p {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  background-attachment: fixed;
 
   .primary-overlay {
     background: rgba(40, 40, 40, 0.8);
@@ -47,7 +54,12 @@ p {
   }
 }
 
+@media (min-width: 768px) {
+  #landing {
+    background-attachment: fixed;
+  }
+}
+
 .post-item {
   margin-top: 8rem;
 }
-

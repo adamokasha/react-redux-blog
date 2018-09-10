@@ -17,7 +17,7 @@ export class CommentForm extends React.Component {
   };
   renderError = () => {
     if (this.state.error) {
-      return <div className="error-msg">{this.state.error}</div>;
+      return <div className="error-msg text-danger">{this.state.error}</div>;
     }
   };
   onSubmit = e => {
@@ -29,6 +29,7 @@ export class CommentForm extends React.Component {
     } else {
       this.setState({ error: '' });
       this.props.startAddComment(this.props.id, this.state.comment);
+      this.setState({ comment: '' });
     }
   };
   render() {
@@ -39,10 +40,12 @@ export class CommentForm extends React.Component {
           <div className="form-group col-md-4 pl-0 mb-2">
             <textarea
               className="form-control"
+              id="comment-textarea"
               placeholder="Leave a comment..."
               onChange={this.onCommentChange}
               maxLength={128}
               rows="3"
+              value={this.state.comment}
             />
           </div>
           <button className="btn btn-primary">Add Comment</button>

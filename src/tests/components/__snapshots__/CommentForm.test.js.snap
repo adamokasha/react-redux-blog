@@ -12,10 +12,12 @@ exports[`should render CommentForm correctly 1`] = `
     >
       <textarea
         className="form-control"
+        id="comment-textarea"
         maxLength={128}
         onChange={[Function]}
         placeholder="Leave a comment..."
         rows="3"
+        value=""
       />
     </div>
     <button

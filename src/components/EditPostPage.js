@@ -13,6 +13,9 @@ export class EditPostPage extends React.Component {
       error: ''
     }
   }
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
   renderError = () => {
     if(this.state.error) {
       return (

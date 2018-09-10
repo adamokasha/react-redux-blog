@@ -16,6 +16,9 @@ export class SignupPage extends React.Component {
       errors: null
     };
   }
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
   onDisplayNameChange = e => {
     this.setState({ displayName: e.target.value });
   };

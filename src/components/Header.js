@@ -51,7 +51,7 @@ export class Header extends React.Component {
       <nav className="navbar navbar-expand-sm navbar-light bg-light fixed-top py-4">
         <div className="container">
           <Link to="/" className="navbar-brand">
-            React Blog
+            <h3 className="mb-0">React Blog</h3>
           </Link>
           <button
             className="navbar-toggler collapsed"

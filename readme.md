@@ -18,7 +18,7 @@ Testing:
 
 
 #### API:
-[https://github.com/samokasha/node-blog-api.git](`https://github.com/samokasha/node-blog-api.git`)
+[https://github.com/samokasha/node-blog-api.git](https://github.com/samokasha/node-blog-api.git)
 
 
 ### Getting started
