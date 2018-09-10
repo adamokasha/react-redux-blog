@@ -3,6 +3,40 @@
 exports[`should render ExpenseDashBoardPage correctly 1`] = `
 <div>
   <Connect(Header) />
+  <div
+    id="landing"
+  >
+    <div
+      className="primary-overlay"
+    >
+      <div
+        className="container h-100"
+      >
+        <div
+          className="row hero-text"
+        >
+          <div
+            className="col-lg-7"
+          >
+            <h1
+              className="text-white mb-5"
+            >
+              React Blog - Responsive blog styled with Bootstrap 4
+            </h1>
+            <a
+              className="text-uppercase text-white hero-link"
+              href="https://github.com/samokasha/react-redux-blog"
+              target="_blank"
+            >
+              <u>
+                Learn More
+              </u>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <br />
   <div
     className="container mb-3"

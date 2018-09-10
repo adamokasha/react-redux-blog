@@ -30,6 +30,11 @@ export class PostsList extends React.Component {
       return <p>Fetching posts...</p>;
     }
   };
+  renderThumbnail(post) {
+    if (post.thumbnail) {
+      return <img src={post.thumbnail} className="img-fluid" />;
+    }
+  }
   render() {
     return (
       <div className="container">
@@ -40,13 +45,24 @@ export class PostsList extends React.Component {
                 ? this.props.posts.map(post => {
                     return (
                       <div key={post._id} className="card">
+                        {this.renderThumbnail(post)}
                         <div className="card-body">
                           <h4 className="card-title">{post.title}</h4>
-                          <h6 className="card-subtitle text-muted">
-                            Posted by {post.author} on {moment(post.createdAt).format('MMM Do YYYY')}
+                          <h6 className="card-subtitle text-muted mb-3">
+                            Posted by {post.author} on{' '}
+                            {moment(post.createdAt).format('MMM Do YYYY')}
                           </h6>
-                          <p className="card-text text-truncate">{post.body}</p>
-                          <Link to={`posts/${post._id}`} key={post._id} className="btn btn-outline-secondary">
+                          <p className="card-text">
+                            {post.body.substring(0, 120) + '...'}
+                          </p>
+                          <span className="badge badge-info">{post.category}</span>
+                        </div>
+                        <div className="card-footer bg-white">
+                          <Link
+                            to={`posts/${post._id}`}
+                            key={post._id}
+                            className="btn btn-outline-primary"
+                          >
                             Read More
                           </Link>
                         </div>

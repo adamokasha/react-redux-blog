@@ -17,6 +17,10 @@ exports[`should render posts list with posts 1`] = `
           className="card"
           key="5b62cb86efcae617d8a0bef9"
         >
+          <img
+            className="img-fluid"
+            src="http://mysite.com/thumb.jpg"
+          />
           <div
             className="card-body"
           >
@@ -26,20 +30,30 @@ exports[`should render posts list with posts 1`] = `
               The first post
             </h4>
             <h6
-              className="card-subtitle text-muted"
+              className="card-subtitle text-muted mb-3"
             >
               Posted by 
               UserOne
-               on 
+               on
+               
               Aug 2nd 2018
             </h6>
             <p
-              className="card-text text-truncate"
+              className="card-text"
             >
-              This is the first post. The body has at least 24 characters.
+              This is the first post. The body has at least 24 characters....
             </p>
+            <span
+              className="badge badge-info"
+            >
+              General
+            </span>
+          </div>
+          <div
+            className="card-footer bg-white"
+          >
             <Link
-              className="btn btn-outline-secondary"
+              className="btn btn-outline-primary"
               key="5b62cb86efcae617d8a0bef9"
               replace={false}
               to="posts/5b62cb86efcae617d8a0bef9"
@@ -61,20 +75,30 @@ exports[`should render posts list with posts 1`] = `
               The second post
             </h4>
             <h6
-              className="card-subtitle text-muted"
+              className="card-subtitle text-muted mb-3"
             >
               Posted by 
               UserTwo
-               on 
+               on
+               
               Aug 2nd 2018
             </h6>
             <p
-              className="card-text text-truncate"
+              className="card-text"
             >
-              This is the second post.The body has at least 24 characters.
+              This is the second post.The body has at least 24 characters....
             </p>
+            <span
+              className="badge badge-info"
+            >
+              General
+            </span>
+          </div>
+          <div
+            className="card-footer bg-white"
+          >
             <Link
-              className="btn btn-outline-secondary"
+              className="btn btn-outline-primary"
               key="5b62cb86efcae617d8a0bef8"
               replace={false}
               to="posts/5b62cb86efcae617d8a0bef8"

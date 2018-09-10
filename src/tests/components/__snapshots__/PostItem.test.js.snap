@@ -4,7 +4,7 @@ exports[`should render a single post 1`] = `
 <div>
   <Connect(Header) />
   <div
-    className="container"
+    className="container post-item"
   >
     <div>
       <h2>
@@ -20,6 +20,10 @@ exports[`should render a single post 1`] = `
         August 2nd 2018
         .
       </p>
+      <img
+        className="img-fluid rounded float-left mr-3 mb-3 d-none d-md-inline-block w-50"
+        src="http://mysite.com/img.jpg"
+      />
       <p>
         This is the first post. The body has at least 24 characters.
       </p>

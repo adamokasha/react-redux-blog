@@ -14,7 +14,23 @@ export const BlogDashboardPage = ({ displayName }) => {
   return (
     <div>
       <Header />
-      <br></br>
+      <div id="landing">
+        <div className="primary-overlay">
+          <div className="container h-100">
+            <div className="row hero-text">
+              <div className="col-lg-7">
+                <h1 className="text-white mb-5">
+                  React Blog - Responsive blog styled with Bootstrap 4
+                </h1>
+                <a href="https://github.com/samokasha/react-redux-blog" target="_blank" className="text-uppercase text-white hero-link">
+                  <u>Learn More</u>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
       <div className="container mb-3">{renderWelcome()}</div>
       <div>
         <PostsList />

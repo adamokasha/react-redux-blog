@@ -16,6 +16,7 @@ export class PostItem extends React.Component {
     };
   }
   async componentDidMount() {
+    window.scrollTo(0, 0);
     if (!this.props.post) {
       try {
         await this.props.startSetPosts();
@@ -36,10 +37,17 @@ export class PostItem extends React.Component {
       );
     }
   }
+  renderMainImage(post) {
+    if (post.mainImage) {
+      return (
+        <img src={post.mainImage} className="img-fluid rounded float-left mr-3 mb-3 d-none d-md-inline-block w-50" />
+      );
+    }
+  }
   renderPost() {
     if (this.props.post) {
       return (
-        <div className="container">
+        <div className="container post-item">
           <div>
             {this.renderEditButton()}
             <h2>{this.props.post.title}</h2>
@@ -47,6 +55,7 @@ export class PostItem extends React.Component {
               Posted by {this.props.post.author} on{' '}
               {moment(this.props.post.createdAt).format('MMMM Do YYYY')}.
             </p>
+            {this.renderMainImage(this.props.post)}
             <p>{this.props.post.body}</p>
           </div>
           <CommentBox
@@ -57,9 +66,13 @@ export class PostItem extends React.Component {
       );
     }
     return (
-      <div className="container mt-4">
+      <div className="container post-item">
         <div className="alert alert-danger" role="alert">
-          Could not retrieve post... <Link to="/" className="alert-link">Click here</Link> to go back to dashboard.
+          Could not retrieve post...
+          <Link to="/" className="alert-link">
+            Click here
+          </Link>{' '}
+          to go back to dashboard.
         </div>
       </div>
     );

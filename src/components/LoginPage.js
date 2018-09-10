@@ -53,11 +53,13 @@ export class LoginPage extends React.Component {
   render() {
     return (
       <div className="container mt-4">
+      <div className="row">
+        <div className="container col-lg-5">
         <h3 className="mb-3 text-center">Sign In</h3>
         {this.renderError()}
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
-            <label for="email">Email</label>
+            <label htmlFor="email">Email</label>
             <input
               className="form-control"
               type="text"
@@ -67,7 +69,7 @@ export class LoginPage extends React.Component {
             />
           </div>
           <div className="form-group">
-            <label for="password">Password</label>
+            <label htmlFor="password">Password</label>
             <input
               className="form-control"
               type="password"
@@ -79,6 +81,8 @@ export class LoginPage extends React.Component {
             <button className="btn btn-primary btn-block" disabled={this.isDisabled()}>Login</button>
           </div>
         </form>
+        </div>
+        </div>
       </div>
     );
   }

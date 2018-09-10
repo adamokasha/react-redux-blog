@@ -4,12 +4,17 @@ exports[`should render EditPostPage correctly 1`] = `
 <div
   className="container"
 >
+  <h3
+    className="text-center mt-4"
+  >
+    Edit Post
+  </h3>
   <button
     className="btn-delete btn btn-dark btn-sm float-right"
     onClick={[Function]}
   >
     <i
-      class="far fa-trash-alt mr-2"
+      className="far fa-trash-alt mr-2"
     />
     Delete Post
   </button>
@@ -23,6 +28,8 @@ exports[`should render EditPostPage correctly 1`] = `
         "category": "General",
         "comments": Array [],
         "createdAt": 1533201286299,
+        "mainImage": "",
+        "thumbnail": "",
         "title": "The second post",
       }
     }

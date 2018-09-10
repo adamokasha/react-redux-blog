@@ -3,6 +3,8 @@ export default [{
   "author" : "UserOne",
   "category" : "General",
   "title" : "The first post",
+  mainImage: "http://mysite.com/img.jpg",
+  thumbnail: "http://mysite.com/thumb.jpg",
   "body" : "This is the first post. The body has at least 24 characters.",
   "createdAt" : 1533201286200.0,
   "comments" : [ 
@@ -23,6 +25,8 @@ export default [{
   "author" : "UserTwo",
   "category" : "General",
   "title" : "The second post",
+  mainImage: "",
+  thumbnail: "",
   "body" : "This is the second post.The body has at least 24 characters.",
   "createdAt" : 1533201286299.0,
   "comments" : []

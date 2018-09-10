@@ -25,7 +25,7 @@ export class SignupPage extends React.Component {
   onPasswordChange = e => {
     this.setState({ password: e.target.value });
   };
-  onPasswordControlChange = e => {
+  onPasswordConfirmChange = e => {
     this.setState({ passwordConfirm: e.target.value });
   };
   renderErrors = () => {
@@ -73,11 +73,13 @@ export class SignupPage extends React.Component {
   render() {
     return (
       <div className="container mt-4">
+        <div className="row">
+        <div className="container col-lg-5">
         <h3 className="mb-3 text-center">Sign Up</h3>
         <ul className="error-list list-group mb-3">{this.renderErrors()}</ul>
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
-            <label for="displayname">Display Name:</label>
+            <label htmlFor="displayname">Display Name:</label>
             <input
               className="form-control"
               type="text"
@@ -88,7 +90,7 @@ export class SignupPage extends React.Component {
             />
           </div>
           <div className="form-group">
-            <label for="email">Email:</label>
+            <label htmlFor="email">Email:</label>
             <input
               className="form-control"
               type="text"
@@ -98,7 +100,7 @@ export class SignupPage extends React.Component {
             />
           </div>
           <div className="form-group">
-            <label for="password">Password:</label>
+            <label htmlFor="password">Password:</label>
             <input
               className="form-control"
               type="password"
@@ -108,7 +110,7 @@ export class SignupPage extends React.Component {
             />
           </div>
           <div className="form-group">
-            <label for="passwordConfirm">Confirm Password:</label>
+            <label htmlFor="passwordConfirm">Confirm Password:</label>
             <input
               className="form-control"
               type="password"
@@ -121,6 +123,8 @@ export class SignupPage extends React.Component {
             <button className="btn btn-primary btn-block">Signup</button>
           </div>
         </form>
+        </div>
+        </div>
       </div>
     );
   }

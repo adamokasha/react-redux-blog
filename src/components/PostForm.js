@@ -9,8 +9,10 @@ export class PostForm extends React.Component {
       title: props.post ? props.post.title : '',
       createdAt: props.post ? props.post.createdAt : Date.now(),
       category: props.post ? props.post.category : '',
+      mainImage: props.post ? props.post.mainImage : '',
+      thumbnail: props.post ? props.post.thumbnail : '',
       body: props.post ? props.post.body : '',
-      errors: null
+      errors: ''
     };
   }
   onTitleChange = e => {
@@ -22,10 +24,20 @@ export class PostForm extends React.Component {
   onBodyChange = e => {
     this.setState({ body: e.target.value });
   };
+  onMainImageChange = e => {
+    this.setState({ mainImage: e.target.value });
+  };
+  onThumbnailChange = e => {
+    this.setState({ thumbnail: e.target.value });
+  };
   renderErrors = () => {
     const { errors } = this.state;
     if (errors) {
-      return this.state.errors.map((error, i) => <li key={i} className="list-group-item list-group-item-danger">{error}</li>);
+      return this.state.errors.map((error, i) => (
+        <li key={i} className="list-group-item list-group-item-danger">
+          {error}
+        </li>
+      ));
     }
   };
   onSubmit = e => {
@@ -53,10 +65,12 @@ export class PostForm extends React.Component {
   render() {
     return (
       <div>
-        <ul className="error-list error-list list-group mb-3">{this.renderErrors()}</ul>
+        <ul className="error-list error-list list-group mb-3">
+          {this.renderErrors()}
+        </ul>
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
-            <label for="title">Title</label>
+            <label htmlFor="title">Title</label>
             <input
               type="text"
               className="form-control"
@@ -67,7 +81,7 @@ export class PostForm extends React.Component {
             />
           </div>
           <div className="form-group">
-            <label for="category">Category</label>
+            <label htmlFor="category">Category</label>
             <input
               type="text"
               className="form-control"
@@ -78,7 +92,29 @@ export class PostForm extends React.Component {
             />
           </div>
           <div className="form-group">
-            <label for="body">Body</label>
+            <label htmlFor="mainimage">Main Image (Optional)</label>
+            <input
+              type="text"
+              className="form-control"
+              name="mainimage"
+              onChange={this.onMainImageChange}
+              value={this.state.mainImage}
+              placeholder="Enter URL for the main post view image"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="thumbnail">Image Thumbnail (Optional)</label>
+            <input
+              type="text"
+              className="form-control"
+              name="thumbnail"
+              onChange={this.onThumbnailChange}
+              value={this.state.thumbnail}
+              placeholder="Enter URL for the dashboard card image"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="body">Body</label>
             <textarea
               name="body"
               className="form-control"

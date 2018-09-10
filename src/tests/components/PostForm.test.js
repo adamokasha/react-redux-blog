@@ -60,8 +60,10 @@ test('should call onSubmit prop for valid form submission', () => {
     _id: posts[1]._id,
     title: posts[1].title,
     category: posts[1].category,
+    mainImage: "",
+    thumbnail: "",
     body: posts[1].body,
     createdAt: posts[1].createdAt,
-    errors: null
+    errors: ''
   });
 })

@@ -4,27 +4,24 @@ import { Route, Redirect } from 'react-router-dom';
 
 import Header from '../components/Header';
 
-const PrivateRoute = ({
-  component: Component, 
-  isAdmin,
-  ...rest
-}) => (
-  <Route 
+const PrivateRoute = ({ component: Component, isAdmin, ...rest }) => (
+  <Route
     {...rest}
-    render={(props) => (
+    render={props =>
       isAdmin ? (
         <div>
           <Header />
+          <br />
           <Component {...props} />
         </div>
       ) : (
         <Redirect to="/" />
       )
-    )}
+    }
   />
-)
+);
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   isAdmin: state.auth.role === 'admin'
 });
 

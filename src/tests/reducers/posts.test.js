@@ -41,6 +41,8 @@ test('should edit an existing post', () => {
     "category" : "EDITED",
     "title" : "This is an edited post",
     "body" : "This is the second post.It has been edited.",
+    mainImage: "",
+    thumbnail: "",
     "createdAt" : 1533201286279.0,
     "comments" : [],
   }

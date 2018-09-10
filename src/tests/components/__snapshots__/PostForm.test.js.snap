@@ -12,7 +12,7 @@ exports[`should render PostForm correctly 1`] = `
       className="form-group"
     >
       <label
-        for="title"
+        htmlFor="title"
       >
         Title
       </label>
@@ -29,7 +29,7 @@ exports[`should render PostForm correctly 1`] = `
       className="form-group"
     >
       <label
-        for="category"
+        htmlFor="category"
       >
         Category
       </label>
@@ -46,7 +46,41 @@ exports[`should render PostForm correctly 1`] = `
       className="form-group"
     >
       <label
-        for="body"
+        htmlFor="mainimage"
+      >
+        Main Image (Optional)
+      </label>
+      <input
+        className="form-control"
+        name="mainimage"
+        onChange={[Function]}
+        placeholder="Enter URL for the main post view image"
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="thumbnail"
+      >
+        Image Thumbnail (Optional)
+      </label>
+      <input
+        className="form-control"
+        name="thumbnail"
+        onChange={[Function]}
+        placeholder="Enter URL for the dashboard card image"
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="body"
       >
         Body
       </label>
@@ -80,7 +114,7 @@ exports[`should render PostForm with post data 1`] = `
       className="form-group"
     >
       <label
-        for="title"
+        htmlFor="title"
       >
         Title
       </label>
@@ -97,7 +131,7 @@ exports[`should render PostForm with post data 1`] = `
       className="form-group"
     >
       <label
-        for="category"
+        htmlFor="category"
       >
         Category
       </label>
@@ -114,7 +148,41 @@ exports[`should render PostForm with post data 1`] = `
       className="form-group"
     >
       <label
-        for="body"
+        htmlFor="mainimage"
+      >
+        Main Image (Optional)
+      </label>
+      <input
+        className="form-control"
+        name="mainimage"
+        onChange={[Function]}
+        placeholder="Enter URL for the main post view image"
+        type="text"
+        value="http://mysite.com/img.jpg"
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="thumbnail"
+      >
+        Image Thumbnail (Optional)
+      </label>
+      <input
+        className="form-control"
+        name="thumbnail"
+        onChange={[Function]}
+        placeholder="Enter URL for the dashboard card image"
+        type="text"
+        value="http://mysite.com/thumb.jpg"
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="body"
       >
         Body
       </label>

@@ -2,7 +2,7 @@
 
 exports[`should render header component 1`] = `
 <nav
-  className="navbar navbar-expand-sm navbar-dark bg-dark mb-3"
+  className="navbar navbar-expand-sm navbar-light bg-light fixed-top py-4"
 >
   <div
     className="container"
@@ -14,34 +14,49 @@ exports[`should render header component 1`] = `
     >
       React Blog
     </Link>
-    <ul
-      className="navbar-nav"
+    <button
+      aria-expanded="false"
+      className="navbar-toggler collapsed"
+      data-target="#navbarCollapse"
+      data-toggle="collapse"
     >
-      <div>
-        <li
-          className="nav-item d-inline-block"
-        >
-          <Link
-            className="nav-link"
-            replace={false}
-            to="/signup"
+      <span
+        className="navbar-toggler-icon"
+      />
+    </button>
+    <div
+      className="navbar-collapse collapse"
+      id="navbarCollapse"
+    >
+      <ul
+        className="navbar-nav ml-auto"
+      >
+        <div>
+          <li
+            className="nav-item d-sm-inline-block"
           >
-            Sign Up
-          </Link>
-        </li>
-        <li
-          className="nav-item d-inline-block"
-        >
-          <Link
-            className="nav-link"
-            replace={false}
-            to="/signin"
+            <Link
+              className="nav-link"
+              replace={false}
+              to="/signup"
+            >
+              Sign Up
+            </Link>
+          </li>
+          <li
+            className="nav-item d-sm-inline-block"
           >
-            Sign In
-          </Link>
-        </li>
-      </div>
-    </ul>
+            <Link
+              className="nav-link"
+              replace={false}
+              to="/signin"
+            >
+              Sign In
+            </Link>
+          </li>
+        </div>
+      </ul>
+    </div>
   </div>
 </nav>
 `;
