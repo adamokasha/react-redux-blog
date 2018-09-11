@@ -1,6 +1,6 @@
 import React from 'react';
 
-class ErrorMessages extends React.Component {
+class ErrorsList extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -10,9 +10,9 @@ class ErrorMessages extends React.Component {
   render() {
     return (
       <ul className="error-list list-group mb-3">
-        {this.props.errors.map(error => {
+        {this.props.errors.map((error, i) => {
           return (
-            <li className="list-group-item list-group-item-danger">{error}</li>
+            <li key={i} className="list-group-item list-group-item-danger">{error}</li>
           );
         })}
       </ul>
@@ -20,4 +20,4 @@ class ErrorMessages extends React.Component {
   }
 }
 
-export default ErrorMessages;
+export default ErrorsList;

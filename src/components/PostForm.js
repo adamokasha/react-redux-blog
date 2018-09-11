@@ -1,5 +1,5 @@
 import React from 'react';
-import ErrorMessages from './ErrorMessages';
+import ErrorsList from './ErrorsList';
 
 export class PostForm extends React.Component {
   constructor(props) {
@@ -34,7 +34,7 @@ export class PostForm extends React.Component {
   renderErrors = () => {
     const { errors } = this.state;
     if (errors) {
-      return <ErrorMessages errors={errors} />;
+      return <ErrorsList errors={errors} />;
     }
   };
   onSubmit = e => {

@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import validator from 'validator';
 
-import ErrorMessages from './ErrorMessages';
+import ErrorsList from './ErrorsList';
 import { startSignup } from '../actions/auth';
 
 export class SignupPage extends React.Component {
@@ -35,7 +35,7 @@ export class SignupPage extends React.Component {
   renderErrors = () => {
     const { errors } = this.state;
     if (errors && errors.length >= 1) {
-      return <ErrorMessages errors={errors} />;
+      return <ErrorsList errors={errors} />;
     }
   };
   onSubmit = async e => {
