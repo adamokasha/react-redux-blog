@@ -11,7 +11,7 @@ Built with:
 
 
 Testing:
-- Mocha
+- Jest
 - Enzyme
 - Moxios
 
