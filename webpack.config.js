@@ -2,6 +2,8 @@ const path = require("path");
 const webpack = require("webpack");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 // NODE_ENV will be 'production' on heroku, 'test' in testing env, and if neither it will be 'development'
 process.env.NODE_ENV = process.env.NODE_ENV || "development";
@@ -20,6 +22,9 @@ module.exports = env => {
       path: path.join(__dirname, "public", "dist"),
       filename: "bundle.js"
     },
+    optimization: {
+      minimizer: [new UglifyJsPlugin()]
+    },  
     module: {
       rules: [
         {
@@ -70,6 +75,13 @@ module.exports = env => {
       }),
       new webpack.DefinePlugin({
         "process.env.API_URI": JSON.stringify(process.env.API_URI)
+      }),
+      new UglifyJsPlugin({
+        test: /\.js(\?.*)?$/i
+      }),   
+      new BundleAnalyzerPlugin({
+        analyzerMode: 'disable',
+        generateStatsFile: false
       })
     ],
     devtool: env === "production" ? "source-map" : "inline-source-map",

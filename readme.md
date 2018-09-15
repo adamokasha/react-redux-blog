@@ -9,13 +9,10 @@ Built with:
 - Bootstrap 4 
 - Webpack 4
 
-
 Testing:
 - Jest
 - Enzyme
 - Moxios
-
-
 
 #### API:
 [https://github.com/samokasha/node-blog-api.git](https://github.com/samokasha/node-blog-api.git)
@@ -23,3 +20,8 @@ Testing:
 
 ### Getting started
 git clone `https://github.com/samokasha/react-redux-blog.git`
+
+### Running in Development
+1. Clone repo and install dependencies.
+2. Run 'npm run dev' from cli to generate public/dist.
+3. Run 'npm run dev-server' for development with live-reloading.
