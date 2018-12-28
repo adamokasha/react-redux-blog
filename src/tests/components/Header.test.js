@@ -1,9 +1,12 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { shallow, configure } from "enzyme";
+import Adapter from "enzyme-adapter-react-16";
 
 import { Header } from "../../components/Header";
 import { startLogout } from "../../actions/auth";
 import { withAdminRole, withUserRole } from "../fixtures/auth";
+
+configure({ adapter: new Adapter() });
 
 test("should render header component", () => {
   const wrapper = shallow(<Header auth={{}} />);

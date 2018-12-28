@@ -1,9 +1,12 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { shallow, configure } from "enzyme";
+import Adapter from "enzyme-adapter-react-16";
 
 import { PostItem } from "../../components/PostItem";
 import posts from "../fixtures/posts";
 import { withAdminRole, withUserRole } from "../fixtures/auth";
+
+configure({ adapter: new Adapter() });
 
 test("should render a single post", () => {
   const wrapper = shallow(<PostItem post={posts[0]} auth={withUserRole} />);

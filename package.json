@@ -32,6 +32,11 @@
     "eject": "npm run build",
     "heroku-postbuild": "npm run build"
   },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
+  },
   "eslintConfig": {
     "extends": "react-app"
   },

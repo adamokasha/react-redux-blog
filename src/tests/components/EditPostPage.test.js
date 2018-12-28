@@ -1,10 +1,13 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { shallow, configure } from "enzyme";
+import Adapter from "enzyme-adapter-react-16";
 import moxios from "moxios";
 import axios from "axios";
 
 import { EditPostPage } from "../../components/EditPostPage";
 import posts from "../fixtures/posts";
+
+configure({ adapter: new Adapter() });
 
 let wrapper, startEditPost, startDeletePost;
 
