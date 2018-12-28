@@ -8,7 +8,9 @@ export const setPosts = posts => ({
 export const startSetPosts = () => {
   return async dispatch => {
     try {
-      const response = await axios.get(`${process.env.API_URI}/posts`);
+      const response = await axios.get(
+        `https://kasho-blog-api.herokuapp.com/posts`
+      );
       dispatch(setPosts(response.data.posts));
     } catch (e) {
       throw new Error("Could not retrieve posts...");
@@ -26,7 +28,7 @@ export const startAddPost = post => {
     const { token } = JSON.parse(localStorage.getItem("auth"));
     try {
       const response = await axios({
-        url: `${process.env.API_URI}/posts`,
+        url: `https://kasho-blog-api.herokuapp.com/posts`,
         method: "post",
         headers: {
           "x-auth": token
@@ -51,7 +53,7 @@ export const startEditPost = (post, id) => {
     const { token } = JSON.parse(localStorage.getItem("auth"));
     try {
       const response = await axios({
-        url: `${process.env.API_URI}/posts/${id}`,
+        url: `https://kasho-blog-api.herokuapp.com/posts/${id}`,
         method: "patch",
         headers: {
           "x-auth": token
@@ -76,7 +78,7 @@ export const startDeletePost = id => {
     const { token } = JSON.parse(localStorage.getItem("auth"));
     try {
       const response = await axios({
-        url: `${process.env.API_URI}/posts/${id}/`,
+        url: `https://kasho-blog-api.herokuapp.com/posts/${id}/`,
         method: "delete",
         headers: {
           "x-auth": token
@@ -101,7 +103,7 @@ export const startAddComment = (id, comment) => {
     try {
       const { token } = JSON.parse(localStorage.getItem("auth"));
       const response = await axios({
-        url: `${process.env.API_URI}/posts/${id}/comments`,
+        url: `https://kasho-blog-api.herokuapp.com/posts/${id}/comments`,
         method: "post",
         headers: {
           "x-auth": token

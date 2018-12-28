@@ -10,11 +10,14 @@ export const login = (displayName, id, role) => ({
 export const startSignup = (displayName, email, password) => {
   return async dispatch => {
     try {
-      const response = await axios.post(`${process.env.API_URI}/users`, {
-        displayName,
-        email,
-        password
-      });
+      const response = await axios.post(
+        `https://kasho-blog-api.herokuapp.com/users`,
+        {
+          displayName,
+          email,
+          password
+        }
+      );
 
       const user = {
         displayName: response.data.displayName,
@@ -36,10 +39,13 @@ export const startSignup = (displayName, email, password) => {
 export const startLogin = (email, password) => {
   return async dispatch => {
     try {
-      const response = await axios.post(`${process.env.API_URI}/users/login`, {
-        email,
-        password
-      });
+      const response = await axios.post(
+        `https://kasho-blog-api.herokuapp.com/users/login`,
+        {
+          email,
+          password
+        }
+      );
 
       const user = {
         displayName: response.data.displayName,
@@ -63,11 +69,14 @@ export const startLogout = () => {
     try {
       const { token } = JSON.parse(localStorage.getItem("auth"));
       localStorage.removeItem("auth");
-      await axios.delete(`${process.env.API_URI}/users/me/token`, {
-        headers: {
-          "x-auth": token
+      await axios.delete(
+        `https://kasho-blog-api.herokuapp.com/users/me/token`,
+        {
+          headers: {
+            "x-auth": token
+          }
         }
-      });
+      );
       dispatch(logout());
     } catch (e) {
       localStorage.removeItem("auth");
