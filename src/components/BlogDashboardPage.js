@@ -23,7 +23,7 @@ export const BlogDashboardPage = ({ displayName }) => {
                   React Blog - Responsive blog styled with Bootstrap 4
                 </h1>
                 <a
-                  href="https://github.com/samokasha/react-redux-blog"
+                  href="https://github.com/adamokasha/react-redux-blog"
                   target="_blank"
                   className="text-uppercase text-white hero-link"
                 >

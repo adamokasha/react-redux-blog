@@ -9,7 +9,7 @@ export const startSetPosts = () => {
   return async dispatch => {
     try {
       const response = await axios.get(
-        `https://kasho-blog-api.herokuapp.com/posts`
+        `${process.env.REACT_APP_API_URL}/posts`
       );
       dispatch(setPosts(response.data.posts));
     } catch (e) {
@@ -28,7 +28,7 @@ export const startAddPost = post => {
     const { token } = JSON.parse(localStorage.getItem("auth"));
     try {
       const response = await axios({
-        url: `https://kasho-blog-api.herokuapp.com/posts`,
+        url: `${process.env.REACT_APP_API_URL}/posts`,
         method: "post",
         headers: {
           "x-auth": token
@@ -53,7 +53,7 @@ export const startEditPost = (post, id) => {
     const { token } = JSON.parse(localStorage.getItem("auth"));
     try {
       const response = await axios({
-        url: `https://kasho-blog-api.herokuapp.com/posts/${id}`,
+        url: `${process.env.REACT_APP_API_URL}/posts/${id}`,
         method: "patch",
         headers: {
           "x-auth": token
@@ -78,7 +78,7 @@ export const startDeletePost = id => {
     const { token } = JSON.parse(localStorage.getItem("auth"));
     try {
       const response = await axios({
-        url: `https://kasho-blog-api.herokuapp.com/posts/${id}/`,
+        url: `${process.env.REACT_APP_API_URL}/posts/${id}/`,
         method: "delete",
         headers: {
           "x-auth": token
@@ -103,7 +103,7 @@ export const startAddComment = (id, comment) => {
     try {
       const { token } = JSON.parse(localStorage.getItem("auth"));
       const response = await axios({
-        url: `https://kasho-blog-api.herokuapp.com/posts/${id}/comments`,
+        url: `${process.env.REACT_APP_API_URL}/posts/${id}/comments`,
         method: "post",
         headers: {
           "x-auth": token

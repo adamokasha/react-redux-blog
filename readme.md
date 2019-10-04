@@ -4,7 +4,7 @@ Front-end for a simple React-Redux Blog. Authentication with JWT. Admins can rea
 
 ### [Link to Heroku live deployment](https://kasho-blog.herokuapp.com/)
 
-### [Link to API](https://github.com/samokasha/node-blog-api)
+### [Link to API](https://github.com/adamokasha/node-blog-api)
 
 Built with:
 
@@ -20,9 +20,10 @@ Testing:
 
 ### Getting started
 
-git clone `https://github.com/samokasha/react-redux-blog.git`
+git clone `https://github.com/adamokasha/react-redux-blog.git`
 
 ### Running in Development
 
 1. Clone repo and install dependencies.
-2. Run 'npm run start' in the terminal.
+2. Add .env.local in root folder and add env var REACT_APP_API_URL [Link to companion api](https://github.com/adamokasha/node-blog-api)
+3. Run 'npm run start' in the terminal.

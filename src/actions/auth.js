@@ -11,7 +11,7 @@ export const startSignup = (displayName, email, password) => {
   return async dispatch => {
     try {
       const response = await axios.post(
-        `https://kasho-blog-api.herokuapp.com/users`,
+        `${process.env.REACT_APP_API_URL}/users`,
         {
           displayName,
           email,
@@ -40,7 +40,7 @@ export const startLogin = (email, password) => {
   return async dispatch => {
     try {
       const response = await axios.post(
-        `https://kasho-blog-api.herokuapp.com/users/login`,
+        `${process.env.REACT_APP_API_URL}/users/login`,
         {
           email,
           password
@@ -70,7 +70,7 @@ export const startLogout = () => {
       const { token } = JSON.parse(localStorage.getItem("auth"));
       localStorage.removeItem("auth");
       await axios.delete(
-        `https://kasho-blog-api.herokuapp.com/users/me/token`,
+        `${process.env.REACT_APP_API_URL}/users/me/token`,
         {
           headers: {
             "x-auth": token

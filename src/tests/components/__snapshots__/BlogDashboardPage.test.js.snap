@@ -25,7 +25,7 @@ exports[`should render ExpenseDashBoardPage correctly 1`] = `
             </h1>
             <a
               className="text-uppercase text-white hero-link"
-              href="https://github.com/samokasha/react-redux-blog"
+              href="https://github.com/adamokasha/react-redux-blog"
               target="_blank"
             >
               <u>
