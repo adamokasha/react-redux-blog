@@ -4,7 +4,7 @@ Front-end for a simple React-Redux Blog. Authentication with JWT. Admins can rea
 
 ### [Link to Heroku live deployment](https://kasho-blog.herokuapp.com/)
 
-### [Link to Dockerized Repo w/ API](https://github.com/adamokasha/docker-react)
+### [Link to Dockerized Repo w/ API](https://github.com/adamokasha/docker-react-blog)
 
 ### [Link to API](https://github.com/adamokasha/node-blog-api)
 
