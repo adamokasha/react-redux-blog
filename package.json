@@ -12,7 +12,7 @@
     "redux-mock-store": "^1.5.3"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "express": "^4.16.4",
     "moment": "^2.23.0",
     "node-sass": "^4.12.0",
